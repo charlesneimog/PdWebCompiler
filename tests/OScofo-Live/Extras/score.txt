@@ -1,0 +1,352 @@
+; Antescofo score generated using native importer
+; Copyright (c) IRCAM 2015
+; Designed by Robert Piéchaud
+
+; Original file: Bach_J.S._-_Partita_in_a-Minor_BWV_1013_V1.0 (1).xml
+; exported from MuseScore 4.4.2
+; MusicXML version 4.0
+; Converted to Antescofo on Thu Sep 26 20:59:41 2024
+
+; start
+
+; ----------- measure 1 --- beat 0 --- time signature 4/4
+
+BPM 80
+NOTE E5 1/4
+NOTE A5 1/4
+NOTE G#5 1/4
+NOTE A5 1/4
+NOTE C6 1/4
+NOTE A5 1/4
+NOTE E5 1/4
+NOTE A4 1/4
+NOTE E5 1/4
+NOTE A5 1/4
+NOTE G#5 1/4
+NOTE A5 1/4
+NOTE C6 1/4
+NOTE A5 1/4
+NOTE E5 1/4
+
+; ----------- measure 2 --- beat 4 --- time signature 4/4
+
+NOTE A4 1/4 measure2
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE F5 1/4
+NOTE G#4 1/4
+NOTE F5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE G#5 1/4
+NOTE A5 1/4
+NOTE E4 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+
+; ----------- measure 3 --- beat 8 --- time signature 4/4
+
+NOTE A4 1/4 measure3
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE F5 1/4
+NOTE G#4 1/4
+NOTE F5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE G#5 1/4
+NOTE A5 1/4
+NOTE E4 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+
+; ----------- measure 4 --- beat 12 --- time signature 4/4
+
+NOTE A4 1/4 measure4
+NOTE C5 1/4
+NOTE G#4 1/4
+NOTE A4 1/4
+NOTE F4 1/4
+NOTE D5 1/4
+NOTE G#4 1/4
+NOTE A4 1/4
+NOTE E4 1/4
+NOTE C5 1/4
+NOTE G#4 1/4
+NOTE A4 1/4
+NOTE D4 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+NOTE A4 1/4
+
+; ----------- measure 5 --- beat 16 --- time signature 4/4
+
+NOTE G#4 1/4 measure5
+NOTE E4 1/4
+NOTE G#4 1/4
+NOTE B4 1/4
+NOTE E5 1/4
+NOTE G#5 1/4
+NOTE B5 1/4
+NOTE D6 1/4
+NOTE F5 1/4
+NOTE D6 1/4
+NOTE B5 1/4
+NOTE G#5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+
+; ----------- measure 6 --- beat 20 --- time signature 4/4
+
+NOTE C5 1/4 measure6
+NOTE A4 1/4
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE A5 1/4
+NOTE C6 1/4
+NOTE E6 1/4
+NOTE F5 1/4
+NOTE G5 1/4
+NOTE B5 1/4
+NOTE G5 1/4
+NOTE E5 1/4
+NOTE C5 1/4
+NOTE A#4 1/4
+NOTE A4 1/4
+NOTE G4 1/4
+
+; ----------- measure 7 --- beat 24 --- time signature 4/4
+
+NOTE A4 1/4 measure7
+NOTE F4 1/4
+NOTE A4 1/4
+NOTE C5 1/4
+NOTE D5 1/4
+NOTE F5 1/4
+NOTE A5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+NOTE G4 1/4
+NOTE B4 1/4
+NOTE D5 1/4
+NOTE E5 1/4
+NOTE G5 1/4
+NOTE B5 1/4
+NOTE D5 1/4
+
+; ----------- measure 8 --- beat 28 --- time signature 4/4
+
+NOTE C5 1/4 measure8
+NOTE A4 1/4
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE F5 1/4
+NOTE A5 1/4
+NOTE C6 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE B4 1/4
+NOTE D5 1/4
+NOTE F#5 1/4
+NOTE G5 1/4
+NOTE B5 1/4
+NOTE D6 1/4
+NOTE F5 1/4
+
+; ----------- measure 9 --- beat 32 --- time signature 4/4
+
+NOTE E5 1/4 measure9
+NOTE G5 1/4
+NOTE C6 1/4
+NOTE B5 1/4
+NOTE C6 1/4
+NOTE E6 1/4
+NOTE C6 1/4
+NOTE G5 1/4
+NOTE C5 1/4
+NOTE G5 1/4
+NOTE C6 1/4
+NOTE B5 1/4
+NOTE C6 1/4
+NOTE E6 1/4
+NOTE C6 1/4
+NOTE G5 1/4
+
+; ----------- measure 10 --- beat 36 --- time signature 4/4
+
+NOTE C5 1/4 measure10
+NOTE G5 1/4
+NOTE A#5 1/4
+NOTE A5 1/4
+NOTE A#5 1/4
+NOTE E6 1/4
+NOTE A#5 1/4
+NOTE G5 1/4
+NOTE C5 1/4
+NOTE G5 1/4
+NOTE A#5 1/4
+NOTE A5 1/4
+NOTE A#5 1/4
+NOTE E6 1/4
+NOTE A#5 1/4
+NOTE G5 1/4
+
+; ----------- measure 11 --- beat 40 --- time signature 4/4
+
+NOTE C#5 1/4 measure11
+NOTE G5 1/4
+NOTE A#5 1/4
+NOTE A5 1/4
+NOTE A#5 1/4
+NOTE E6 1/4
+NOTE A#5 1/4
+NOTE G5 1/4
+NOTE C#5 1/4
+NOTE G5 1/4
+NOTE E5 1/4
+NOTE C#5 1/4
+NOTE A4 1/4
+NOTE G4 1/4
+NOTE F4 1/4
+NOTE E4 1/4
+
+; ----------- measure 12 --- beat 44 --- time signature 4/4
+
+NOTE D4 1/4 measure12
+NOTE G5 1/4
+NOTE F5 1/4
+NOTE E5 1/4
+NOTE F5 1/4
+NOTE A5 1/4
+NOTE F5 1/4
+NOTE D5 1/4
+NOTE B4 1/4
+NOTE G#4 1/4
+NOTE B4 1/4
+NOTE D5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+
+; ----------- measure 13 --- beat 48 --- time signature 4/4
+
+NOTE C5 1/4 measure13
+NOTE E5 1/4
+NOTE A5 1/4
+NOTE G#5 1/4
+NOTE A5 1/4
+NOTE C6 1/4
+NOTE A5 1/4
+NOTE F#5 1/4
+NOTE D#5 1/4
+NOTE B4 1/4
+NOTE D#5 1/4
+NOTE F#5 1/4
+NOTE B5 1/4
+NOTE A5 1/4
+NOTE G5 1/4
+NOTE F#5 1/4
+
+; ----------- measure 14 --- beat 52 --- time signature 4/4
+
+NOTE G5 1/4 measure14
+NOTE F#5 1/4
+NOTE E5 1/4
+NOTE G5 1/4
+NOTE A4 1/4
+NOTE E5 1/4
+NOTE G5 1/4
+NOTE C6 1/4
+NOTE F#5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE F#5 1/4
+NOTE G4 1/4
+NOTE D5 1/4
+NOTE F#5 1/4
+NOTE B5 1/4
+
+; ----------- measure 15 --- beat 56 --- time signature 4/4
+
+NOTE E5 1/4 measure15
+NOTE D5 1/4
+NOTE C5 1/4
+NOTE E5 1/4
+NOTE F#4 1/4
+NOTE E5 1/4
+NOTE F#5 1/4
+NOTE A5 1/4
+NOTE D#5 1/4
+NOTE B4 1/4
+NOTE C5 1/4
+NOTE A4 1/4
+NOTE D#4 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+NOTE A4 1/4
+
+; ----------- measure 16 --- beat 60 --- time signature 4/4
+
+NOTE G4 1/4 measure16
+NOTE E5 1/4
+NOTE F5 1/4
+NOTE D5 1/4
+NOTE G#4 1/4
+NOTE F5 1/4
+NOTE E5 1/4
+NOTE D5 1/4
+NOTE A4 1/4
+NOTE F#5 1/4
+NOTE G5 1/4
+NOTE E5 1/4
+NOTE A#4 1/4
+NOTE G5 1/4
+NOTE F#5 1/4
+NOTE E5 1/4
+
+; ----------- measure 17 --- beat 64 --- time signature 4/4
+
+NOTE D#5 1/4 measure17
+NOTE B5 1/4
+NOTE G#5 1/4
+NOTE D5 1/4
+NOTE C#5 1/4
+NOTE A5 1/4
+NOTE F#5 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+NOTE G5 1/4
+NOTE E5 1/4
+NOTE A#4 1/4
+NOTE A4 1/4
+NOTE F5 1/4
+NOTE D#5 1/4
+NOTE A4 1/4
+
+; ----------- measure 18 --- beat 68 --- time signature 4/4
+
+NOTE G4 1/4 measure18
+NOTE E5 1/4
+NOTE C5 1/4
+NOTE A4 1/4
+NOTE F#4 1/4
+NOTE C5 1/4
+NOTE A4 1/4
+NOTE F#4 1/4
+NOTE D#4 1/4
+NOTE F#4 1/4
+NOTE A4 1/4
+NOTE C5 1/4
+NOTE B4 1/4
+NOTE A5 1/4
+NOTE G5 1/4
+NOTE F#5 1/4

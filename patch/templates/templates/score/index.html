@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pd4Web</title>
+    <meta charset="UTF-8" />
+    <!-- pd4web.threads.js can help if you can't active Cross-Origin Resource Sharing (CORS) from server side -->
+    <script src="./pd4web.threads.js"></script>
+    <script src="./pd4web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+      /* Style for the entire Markdown content container */
+      #Pd4WebText {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          padding: 20px;
+          border-radius: 8px;
+          text-align: center;
+      }
+  
+      /* Style for h1 tags inside #Pd4WebText */
+      #Pd4WebText h1 {
+          font-size: 2em;
+          color: #2c3e50;
+          margin-bottom: 0.5em;
+          padding-bottom: 0.3em;
+          text-align: center;
+          user-select: none;
+      }
+  
+      /* Style for h2 tags inside #Pd4WebText */
+      #Pd4WebText h2 {
+          font-size: 1.75em;
+          color: #34495e;
+          margin-top: 1em;
+          margin-bottom: 0.5em;
+          text-align: center;
+          user-select: none;
+      }
+  
+      /* Style for paragraph tags inside #Pd4WebText */
+      #Pd4WebText p {
+          font-size: 1.5em;
+          color: #000000;
+          margin-bottom: 1em;
+          text-align: justify;
+          user-select: none;
+      }
+  
+      /* Style for lists */
+      #Pd4WebText ul {
+          list-style-type: disc;
+          margin-left: 20px;
+          margin-bottom: 1em;
+          text-align: left;
+      }
+  
+      #Pd4WebText ol {
+          list-style-type: decimal;
+          margin-left: 1px;
+          margin-bottom: 1em;
+          font-size: 1.5em;
+          text-align: left;
+      }   
+
+      #Pd4WebText ul {
+        list-style-type: disc; /* Use a disc (default bullet) */
+        margin-left: 2px;
+        padding-left: 0px;
+        font-size: 1.2em;
+      }
+
+      /* Style for each list item */
+      #Pd4WebText li {
+          font-size: 1.2em;
+          color: #000000; /* Dark gray color */
+          margin-bottom: 0.5em; /* Space between items */
+      }
+      
+      .pd4web-fullscreen {
+        content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzIiIHdpZHRoPSIyOCIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjwhLS0hRm9udCBBd2Vzb21lIEZyZWUgNi42LjAgYnkgQGZvbnRhd2Vzb21lIC0gaHR0cHM6Ly9mb250YXdlc29tZS5jb20gTGljZW5zZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tL2xpY2Vuc2UvZnJlZSBDb3B5cmlnaHQgMjAyNCBGb250aWNvbnMsIEluYy4tLT48cGF0aCBkPSJNMzIgMzJDMTQuMyAzMiAwIDQ2LjMgMCA2NGwwIDk2YzAgMTcuNyAxNC4zIDMyIDMyIDMyczMyLTE0LjMgMzItMzJsMC02NCA2NCAwYzE3LjcgMCAzMi0xNC4zIDMyLTMycy0xNC4zLTMyLTMyLTMyTDMyIDMyek02NCAzNTJjMC0xNy43LTE0LjMtMzItMzItMzJzLTMyIDE0LjMtMzIgMzJsMCA5NmMwIDE3LjcgMTQuMyAzMiAzMiAzMmw5NiAwYzE3LjcgMCAzMi0xNC4zIDMyLTMycy0xNC4zLTMyLTMyLTMybC02NCAwIDAtNjR6TTMyMCAzMmMtMTcuNyAwLTMyIDE0LjMtMzIgMzJzMTQuMyAzMiAzMiAzMmw2NCAwIDAgNjRjMCAxNy43IDE0LjMgMzIgMzIgMzJzMzItMTQuMyAzMi0zMmwwLTk2YzAtMTcuNy0xNC4zLTMyLTMyLTMybC05NiAwek00NDggMzUyYzAtMTcuNy0xNC4zLTMyLTMyLTMycy0zMiAxNC4zLTMyIDMybDAgNjQtNjQgMGMtMTcuNyAwLTMyIDE0LjMtMzIgMzJzMTQuMyAzMiAzMiAzMmw5NiAwYzE3LjcgMCAzMi0xNC4zIDMyLTMybDAtOTZ6Ii8+PC9zdmc+");
+        display: flex;
+        justify-content: center;   
+        align-items: center;       
+        width: 24px;                
+        height: 24px;              
+        margin: 0 auto;  
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- All the styles are in the pd4web.style.css file loaded by pd4web.js -->
+    <div style="display: flex; justify-content: center; width: 100%; height: 100vh; margin-top: 20px;">
+      <div style="width: 30%;">
+        <div style="display: flex; justify-content: center;">
+          <span class="pd4web-sound-switch" id="Pd4WebAudioSwitch"></span>
+          <span class="pd4web-fullscreen" id="Pd4WebFullscreen"></span>
+        </div>
+        <hr>
+        <div id="Pd4WebPatchDiv"class="Pd4WebPatchDiv">
+          <svg id="Pd4WebCanvas"></svg>
+        </div>
+        <div id="Pd4WebText"></div>
+      </div>
+      <div style="width: 70%; margin: 0 auto; text-align: center;">
+        <img id="Pd4WebScore" src="score1.png" style="width: 100%; max-width: 100%;">
+      </div>
+      
+      
+      
+    </div>
+    <script>  
+      async function loadMarkdown() {
+        try {
+            const response = await fetch('bula.txt');
+            if (!response.ok) throw new Error('Failed to load file.md');
+            const markdown = await response.text();
+            const html = marked.parse(markdown);
+            document.getElementById('Pd4WebText').innerHTML = html;
+        } catch (error) {
+            console.error('Error loading Markdown:', error);
+            document.getElementById('Pd4WebText').innerText = 'Failed to load content.';
+        }
+    }
+    window.onload = loadMarkdown;
+
+    // when user click pd4web-fullscreen, the patch will be displayed in full screen
+    document.getElementById("Pd4WebFullscreen").addEventListener("click", () => {
+      // check if already in full screen
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+        return;
+      }
+      document.documentElement.requestFullscreen();
+
+    });
+      
+
+    var Pd4Web = null; // Pd4Web object must be declared in the global scope
+    Pd4WebModule().then((Pd4WebModulePromise) => {
+      Pd4Web = new Pd4WebModulePromise.Pd4Web();
+    });
+
+    document
+      .getElementById("Pd4WebAudioSwitch")
+      .addEventListener("click", async () => {
+        // Pd4Web.init(), when using audio input, must be called after a user gesture
+        Pd4Web.init();
+
+        Pd4Web.onSymbolReceived("pd4web-score", function (symbol) {
+          document.getElementById("Pd4WebScore").src = symbol;
+        });
+
+      });
+    </script>
+  </body>
+</html>

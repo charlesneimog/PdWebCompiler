@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pd4Web</title>
+    <meta charset="UTF-8" />
+    <script src="./pd4web.threads.js"></script>
+    <script src="./pd4web.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.8.9/build/opensheetmusicdisplay.min.js
+"></script>
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <span
+      style="display: block; margin: 0 auto; text-align: center"
+      class="pd4web-sound-off"
+      id="Pd4WebAudioSwitch"
+    ></span>
+    <div
+      id="Pd4WebPatchDiv"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-top: 1%;
+        box-shadow:
+          rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      "
+    >
+      <svg
+        id="Pd4WebCanvas"
+        height="100%"
+        width="100%"
+        preserveAspectRatio="xMidYMin meet"
+      ></svg>
+    </div>
+    <hr />
+
+    <div style="width=70%" id="sheet-container"></div>
+    <div></div>
+    <script>
+      var notes = [];
+      var prevNote = null;
+      var osmd = null;
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(
+          "sheet-container",
+        );
+        try {
+          await osmd.load("BWV-1013.xml");
+          var isMobile =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              navigator.userAgent,
+            );
+          if (isMobile) {
+            osmd.zoom = 1.5;
+            const pd4webSoundOff = document.querySelector(".pd4web-sound-off");
+            pd4webSoundOff.style.height = "100px"; // Increase height
+            pd4webSoundOff.style.width = "100px"; // Increase width
+          }
+
+          osmd.render();
+          const graphicalNotes = [];
+          for (const staff of osmd.GraphicSheet.MeasureList) {
+            for (const measure of staff) {
+              for (const staffEntry of measure.staffEntries) {
+                for (const voiceEntry of staffEntry.graphicalVoiceEntries) {
+                  graphicalNotes.push(...voiceEntry.notes);
+                }
+              }
+            }
+          }
+          notes = graphicalNotes;
+        } catch (err) {
+          console.error("Error loading or rendering MusicXML file:", err);
+        }
+      });
+    </script>
+
+    <script>
+      // ╭─────────────────────────────────────╮
+      // │      Load Pd4Web audio engine       │
+      // ╰─────────────────────────────────────╯
+
+      // Don't remove this
+      let Pd4Web = null;
+
+      Pd4WebModule().then((Pd4WebModulePromise) => {
+        Pd4Web = new Pd4WebModulePromise.Pd4Web();
+      });
+
+      // ╭─────────────────────────────────────╮
+      // │        Gui Bottoms Interface        │
+      // ╰─────────────────────────────────────╯
+      document
+        .getElementById("Pd4WebAudioSwitch")
+        .addEventListener("click", async () => {
+          // pd4web incorporates web audio functionality through the use of AudioWorklets.
+          // To initialize AudioWorklets, pd4web must be initiated from a click event.
+          // In this instance, an icon is utilized with <span class="pd4web-sound-off" id="Pd4WebAudioSwitch"></span>,
+          // though you have the flexibility to add a click event anywhere within the Web Window.
+
+          // To add one click for any where in the window use window.addEventListener('click', function(event)...
+          var clickableSpan = document.getElementById("Pd4WebAudioSwitch");
+          if (clickableSpan.classList.contains("pd4web-sound-on")) {
+            clickableSpan.classList.remove("pd4web-sound-on");
+            await Pd4Web.suspendAudio();
+            clickableSpan.classList.add("pd4web-sound-off");
+            return;
+          }
+
+          clickableSpan.classList.remove("pd4web-sound-off");
+          clickableSpan.classList.add("pd4web-sound-loading");
+
+          await Pd4Web.init(); // <== This is the unique important thing here, running this from any click event will make the PureData turn on.
+
+          clickableSpan.classList.remove("pd4web-sound-loading");
+          clickableSpan.classList.add("pd4web-sound-on");
+
+          var timeCount = 1; // pause
+          var measureToRender = 1;
+
+          Pd4Web.onFloatReceived("score-render", function (f) {
+            var svgId = notes[f].getSVGId();
+            var svgElement = document.getElementById("vf-" + svgId);
+            var noteheadElement = svgElement.querySelector(".vf-notehead");
+            var pathElement = noteheadElement.querySelector("path");
+            pathElement.setAttribute("fill", "red");
+          });
+        });
+    </script>
+  </body>
+</html>

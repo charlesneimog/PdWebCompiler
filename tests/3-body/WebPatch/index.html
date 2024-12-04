@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pd4Web</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.min.js"></script>
+    <script src="./pd4web.threads.js"></script>
+    <script src="./pd4web.js"></script>
+    <script src="./sketch.js"></script>
+    <style>
+      /* Style for the p5.js canvas */
+      canvas {
+        border-radius: 20px;
+        display: block;
+        margin: 20px auto; /* Centers horizontally */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <span class="pd4web-sound-switch" id="Pd4WebAudioSwitch"></span>
+    <div id="p5js"></div>
+    <script>
+      // ╭─────────────────────────────────────╮
+      // │        Gui Bottoms Interface        │
+      // ╰─────────────────────────────────────╯
+      var Pd4Web = null;
+
+      Pd4WebModule().then((Pd4WebModulePromise) => {
+        Pd4Web = new Pd4WebModulePromise.Pd4Web();
+      });
+
+      function defineChord() {
+        if (Pd4Web.sendList) {
+          Pd4Web.sendList("pd-random", ["bang"]);
+        } else {
+          setTimeout(defineChord, 100);
+        }
+      }
+
+      document.getElementById("Pd4WebAudioSwitch").addEventListener(
+        "click",
+        async () => {
+          Pd4Web.init();
+          defineChord();
+        },
+        { once: true },
+      );
+    </script>
+  </body>
+</html>

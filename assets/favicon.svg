@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.4187449"
+     inkscape:cx="10.980402"
+     inkscape:cy="36.447554"
+     inkscape:window-width="1340"
+     inkscape:window-height="1048"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Workspace" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect2"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,1,1,0,2.4610619,0,1 @ F,0,1,1,0,2.4610619,0,1 @ F,0,1,1,0,2.4610619,0,1 @ F,0,1,1,0,2.4610619,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="7fb48d028a00BASE"
+       style="fill:#654ff0;stroke-width:0.25649"
+       d="M 2.6121595,0.14254379 H 5.8679151 A 2.4610619,2.4610619 45 0 1 8.328977,2.6036057 V 5.8593612 A 2.4610619,2.4610619 135 0 1 5.8679151,8.3204231 H 2.6121595 A 2.4610619,2.4610619 45 0 1 0.15109763,5.8593612 V 2.6036057 A 2.4610619,2.4610619 135 0 1 2.6121595,0.14254379 Z"
+       inkscape:path-effect="#path-effect2"
+       inkscape:original-d="M 0.15109763,0.14254379 H 8.328977 V 8.3204231 H 0.15109763 Z"
+       transform="matrix(1.0301789,0,0,1.0329275,-0.13147663,-0.1290939)" />
+    <path
+       id="7fb48d028a00BUT"
+       style="fill:#654ff0;fill-opacity:1;stroke:#ffffff;stroke-width:0.484707;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="0"
+       inkscape:original="M 4.2402344 0.6875 A 3.5437472 3.5437472 0 0 0 0.69726562 4.2324219 A 3.5437472 3.5437472 0 0 0 4.2402344 7.7753906 A 3.5437472 3.5437472 0 0 0 7.7832031 4.2324219 A 3.5437472 3.5437472 0 0 0 4.2402344 0.6875 z "
+       d="M 4.2402344,0.6875 A 3.5437472,3.5437472 0 0 0 0.69726562,4.2324219 3.5437472,3.5437472 0 0 0 4.2402344,7.7753906 3.5437472,3.5437472 0 0 0 7.7832031,4.2324219 3.5437472,3.5437472 0 0 0 4.2402344,0.6875 Z"
+       transform="matrix(1.0301789,0,0,1.0329275,-0.13147663,-0.1290939)" />
+    <g
+       id="Workspace"
+       transform="matrix(0.33205311,0,0,0.33293906,0.22428118,0.2468645)"
+       inkscape:export-filename="icon.svg"
+       inkscape:export-xdpi="294.52328"
+       inkscape:export-ydpi="294.52328"
+       style="stroke-width:0.470459">
+      <rect
+         class="cls-1"
+         height="24"
+         width="24"
+         id="rect1"
+         x="0"
+         y="0"
+         style="fill:none;stroke-width:0.470459" />
+      <rect
+         x="6.0974498"
+         y="6.0133939"
+         width="11.952154"
+         height="11.92035"
+         id="7fb48d028a00BASE-7"
+         style="fill:#00fc04;stroke:#000000;stroke-width:0.795749" />
+      <ellipse
+         cx="12.073527"
+         cy="11.973569"
+         id="7fb48d028a00BUT-5"
+         style="fill:#00fc04;stroke:#000000;stroke-width:0.795749"
+         rx="5.1792669"
+         ry="5.1654849" />
+    </g>
+  </g>
+</svg>

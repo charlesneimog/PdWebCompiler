@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pd4Web</title>
+    <meta charset="UTF-8" />
+    <!-- pd4web.threads.js can help if you can't active Cross-Origin Resource Sharing (CORS) from server side -->
+    <script src="./pd4web.threads.js"></script>
+    <script src="./pd4web.js"></script>
+  </head>
+  <body>
+    <!-- All the styles are in the pd4web.style.css file loaded by pd4web.js -->
+    <span class="pd4web-sound-switch" id="Pd4WebAudioSwitch"></span>
+    <div id="Pd4WebPatchDiv"class="Pd4WebPatchDiv">
+      <svg id="Pd4WebCanvas"></svg>
+    </div>
+    <script>     
+      var Pd4Web = null; // Pd4Web object must be declared in the global scope
+      Pd4WebModule().then((Pd4WebModulePromise) => {
+        Pd4Web = new Pd4WebModulePromise.Pd4Web();
+      });
+  
+      document
+        .getElementById("Pd4WebAudioSwitch")
+        .addEventListener("click", async () => {
+          // Pd4Web.init(), when using audio input, must be called after a user gesture
+          Pd4Web.init();
+        }, { once: true });
+    </script>
+  </body>
+</html>

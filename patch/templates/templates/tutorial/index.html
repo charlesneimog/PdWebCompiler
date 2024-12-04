@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pd4Web</title>
+    <meta charset="UTF-8" />
+    <!-- pd4web.threads.js can help if you can't active Cross-Origin Resource Sharing (CORS) from server side -->
+    <script src="./pd4web.threads.js"></script>
+    <script src="./pd4web.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+     /* Define default (light mode) styles */
+:root {
+    --text-color: black;
+    --background-color: white;
+    --header-color: #000000;
+    --sub-header-color: #000000;
+    --list-item-color: #000000;
+}
+
+/* Media query for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: white;
+        --background-color: #333333;
+        --header-color: white;
+        --sub-header-color: white;
+        --list-item-color: #cccccc;
+    }
+}
+
+/* Base styling for #Pd4WebText */
+#Pd4WebText {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: var(--background-color); /* Background color changes with theme */
+    color: var(--text-color); /* Text color changes with theme */
+}
+
+/* Style for h1 tags inside #Pd4WebText */
+#Pd4WebText h1 {
+    font-size: 20px;
+    color: var(--header-color); /* Header color changes with theme */
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    text-align: center;
+    user-select: none;
+}
+
+/* Style for h2 tags inside #Pd4WebText */
+#Pd4WebText h2 {
+    font-size: 18px;
+    color: var(--sub-header-color); /* Sub-header color changes with theme */
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    user-select: none;
+}
+
+/* Style for h3 tags inside #Pd4WebText */
+#Pd4WebText h3 {
+    font-size: 16px;
+    color: var(--sub-header-color); /* Sub-header color changes with theme */
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    user-select: none;
+}
+
+/* Style for paragraph tags inside #Pd4WebText */
+#Pd4WebText p {
+    font-size: 14px;
+    color: var(--text-color); /* Text color changes with theme */
+    margin-bottom: 1em;
+    text-align: justify;
+    user-select: none;
+}
+
+/* Style for unordered lists inside #Pd4WebText */
+#Pd4WebText ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 14px;
+    text-align: left;
+    color: var(--list-item-color); /* List items color changes with theme */
+}
+
+/* Style for ordered lists inside #Pd4WebText */
+#Pd4WebText ol {
+    list-style-type: decimal;
+    margin-left: 1px;
+    margin-bottom: 1em;
+    font-size: 14px;
+    text-align: left;
+    color: var(--list-item-color); /* List items color changes with theme */
+}
+
+/* Style for each list item inside #Pd4WebText */
+#Pd4WebText li {
+    font-size: 14px;
+    color: var(--list-item-color); /* List item color changes with theme */
+    margin-bottom: 0.5em;
+    user-select: none;
+}
+
+
+    /* Adiciona um scroll ao Pd4WebText */
+    .scrollable-text {
+      max-height: 90%; /* Ajuste o valor conforme necessário */
+      overflow-y: auto;
+      padding: 5px;
+      border: 1px solid #f5f5f5;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center;">
+      <span class="pd4web-sound-switch" id="Pd4WebAudioSwitch"></span>
+    </div>
+
+    <div style="width: 100%; height: calc(100vh - 60px); margin-top: 20px; border-radius: 10px; box-shadow: 0 0 5px rgba(146, 54, 54, 0.1); display: flex;">
+      <!-- Seção de texto com rolagem -->
+      <div style="width: 50%; height: 100%; overflow-y: auto; padding: 20px; box-sizing: border-box;">
+        <div id="Pd4WebText" class="scrollable-text"></div>
+      </div>
+    
+      <!-- Seção do canvas, alinhado no centro com margem superior -->
+      <div style="width: 50%; height: 100%; padding: 10px; display: flex; justify-content: center; box-sizing: border-box;">
+        <div id="Pd4WebPatchDiv" class="Pd4WebPatchDiv" style="margin-top: 10px;">
+          <svg id="Pd4WebCanvas" style="width: 100%; height: 100%;"></svg>
+        </div>
+      </div>
+    </div>
+
+    <script>  
+    async function loadMarkdown() {
+      try {
+          // list all files in the current directory
+
+          const response = await fetch('./example.txt');
+          // Check if the response is OK (status 200)
+          console.log(response);
+          if (!response.ok) throw new Error('Failed to load');          
+          const markdown = await response.text();
+          const html = marked.parse(markdown);
+          document.getElementById('Pd4WebText').innerHTML = html;
+      } catch (error) {
+          console.error('Error loading Markdown:', error);
+          document.getElementById('Pd4WebText').innerText = 'Failed to load content.';
+      }
+    }
+    window.onload = loadMarkdown;
+ 
+    var Pd4Web = null; // Pd4Web object must be declared in the global scope
+    Pd4WebModule().then((Pd4WebModulePromise) => {
+      Pd4Web = new Pd4WebModulePromise.Pd4Web();
+    });
+
+    document
+      .getElementById("Pd4WebAudioSwitch")
+      .addEventListener("click", async () => {
+        // Pd4Web.init(), when using audio input, must be called after a user gesture
+        Pd4Web.init();
+
+        Pd4Web.onSymbolReceived("pd4web-score", function (symbol) {
+          document.getElementById("Pd4WebScore").src = symbol;
+        });
+
+      });
+    </script>
+  </body>
+</html>

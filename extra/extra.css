@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+}
+
+#logo_light_mode {
+  display: var(--md-footer-logo-light-mode);
+}
+
+#logo_dark_mode {
+  display: var(--md-footer-logo-dark-mode);
+}
+
+[data-md-color-scheme="default"] {
+  --md-footer-logo-dark-mode:         none;
+  --md-footer-logo-light-mode:         block;
+  --background-color: #e2e2e2; /* Background color for light mode */
+  --background-for-line: #ecececd3; /* Background color for line */
+}
+
+[data-md-color-scheme="slate"] {
+  --md-footer-logo-dark-mode:         block;
+  --md-footer-logo-light-mode:         none;
+  --background-color: #474747; /* Background color for dark mode */
+  --background-for-line: #4d4c4c8f; /* Background color for line */
+}
+
+.special-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.special-table th, .special-table td {
+  border: 0.1em solid var(--background-for-line);
+  padding: 10px;
+}
+
+.special-table th {
+  text-align: center;
+  font-weight: bold;
+}
+
+.special-table td {
+  text-align: center;
+}
+
+.special-table th:first-child,
+.special-table td:first-child {
+  width: 20%; /* Adjust the width as needed */
+}
+
+svg, img {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+:root {
+  --md-admonition-icon--bash-code: url('data:image/svg+xml;charset=utf-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512px" height="512px"><path d="M475.4285583,36.5714302H36.5714302C16.3714294,36.5714302,0,52.942852,0,73.1428604v365.7142944c0,20.1999817,16.3714275,36.5714111,36.5714302,36.5714111h438.8571167C495.6285706,475.4285583,512,459.0571289,512,438.8571472V73.1428604C512,52.942852,495.6285706,36.5714302,475.4285583,36.5714302z M73.1428604,292.5714417l73.1428604-73.142868l-73.1428604-73.1428528l36.5714264-36.571434l109.7142868,109.7142868L109.7142868,329.1428528L73.1428604,292.5714417z M365.7142944,329.1428528H219.4285736v-36.5714111h146.2857208V329.1428528z"/></svg>')
+}
+.md-typeset .admonition.bash-code,
+.md-typeset details.bash-code {
+  border-color: rgba(0, 204, 126);
+}
+.md-typeset .bash-code > .admonition-title,
+.md-typeset .bash-code > summary {
+  background-color: rgba(0, 204, 126, 0.1);
+}
+.md-typeset .bash-code > .admonition-title::before,
+.md-typeset .bash-code > summary::before {
+  background-color: rgb(0, 0, 0);
+  -webkit-mask-image: var(--md-admonition-icon--bash-code);
+          mask-image: var(--md-admonition-icon--bash-code);
+}
+
+
+
+:root {
+  --md-admonition-icon--folder: url('data:image/svg+xml;charset=utf-8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g data-name="11. Folder" id="_11._Folder"><path d="M16.03,5h7.79A2.987,2.987,0,0,0,21,3H15.22a1.009,1.009,0,0,1,.07.15Z"/><path d="M23,7H14.68L13.43,3.89A2.981,2.981,0,0,0,10.65,2H3A3.009,3.009,0,0,0,0,5V19a3.009,3.009,0,0,0,3,3H21a3.009,3.009,0,0,0,3-3V8A1,1,0,0,0,23,7Z"/></g></svg>')
+}
+.md-typeset .admonition.folder,
+.md-typeset details.folder {
+  border-color: rgba(125, 125, 255);
+}
+.md-typeset .folder > .admonition-title,
+.md-typeset .folder > summary {
+  background-color: rgba(125, 125, 255, 0.1);
+}
+.md-typeset .folder > .admonition-title::before,
+.md-typeset .folder > summary::before {
+  background-color: rgb(0, 0, 0);
+  -webkit-mask-image: var(--md-admonition-icon--folder);
+          mask-image: var(--md-admonition-icon--folder);
+}
+
+:root {
+  --md-admonition-icon--pd2wasm-rule: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-gavel" width="24" height="24" viewBox="0 0 24 24"><path d="M2.3,20.28L11.9,10.68L10.5,9.26L9.78,9.97C9.39,10.36 8.76,10.36 8.37,9.97L7.66,9.26C7.27,8.87 7.27,8.24 7.66,7.85L13.32,2.19C13.71,1.8 14.34,1.8 14.73,2.19L15.44,2.9C15.83,3.29 15.83,3.92 15.44,4.31L14.73,5L16.15,6.43C16.54,6.04 17.17,6.04 17.56,6.43C17.95,6.82 17.95,7.46 17.56,7.85L18.97,9.26L19.68,8.55C20.07,8.16 20.71,8.16 21.1,8.55L21.8,9.26C22.19,9.65 22.19,10.29 21.8,10.68L16.15,16.33C15.76,16.72 15.12,16.72 14.73,16.33L14.03,15.63C13.63,15.24 13.63,14.6 14.03,14.21L14.73,13.5L13.32,12.09L3.71,21.7C3.32,22.09 2.69,22.09 2.3,21.7C1.91,21.31 1.91,20.67 2.3,20.28M20,19A2,2 0 0,1 22,21V22H12V21A2,2 0 0,1 14,19H20Z" /></svg>')
+}
+.md-typeset .admonition.pd2wasm-rule,
+.md-typeset details.pd2wasm-rule {
+  border-color: rgba(255, 0, 0);
+}
+.md-typeset .pd2wasm-rule > .admonition-title,
+.md-typeset .pd2wasm-rule > summary {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.md-typeset .pd2wasm-rule > .admonition-title::before,
+.md-typeset .pd2wasm-rule > summary::before {
+  background-color: rgb(0, 0, 0);
+  -webkit-mask-image: var(--md-admonition-icon--pd2wasm-rule);
+          mask-image: var(--md-admonition-icon--pd2wasm-rule);
+}
+
+
+* {box-sizing:border-box}
+
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto; /* Center container horizontally */
+  padding: 0 20px; /* Optional: Add padding for better spacing */
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Flexible column width */
+  gap: 15px; /* Space between cards */
+  justify-content: start; /* Align items to the start */
+  position: relative;
+  top: 5px;
+  margin-bottom: 25px;
+}
+
+
+.card {
+  border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden; /* Ensure no overflow from image */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 0px; /* Optional: Add padding inside card */
+  margin-bottom: 25px;
+}
+
+.card-img{
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.3), 0.05rem 0 0.15rem rgba(36, 36, 36, 0.5);
+  width: 80%;
+  border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  margin-bottom: 10px; /* Space below the button container */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #17141d98;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.button:hover {
+  background-color: #17141d98;
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .card-img{
+    box-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.3), 0.05rem 0 0.15rem rgba(255, 255, 255, 0.5);
+  }
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+
+.responsive-flex {
+  margin-left: 20%; 
+  margin-right: 20%; 
+  display: flex; 
+  align-items: center; 
+  text-align: justify;
+  flex-direction: column;
+}
+
+/* Styling for the image */
+.responsive-image {
+  border-radius: 40px; 
+  width: 20%; 
+  margin-right: 20px; 
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .responsive-flex {
+      flex-direction: row; /* Image on the left */
+      align-items: flex-start;
+  }
+
+  .responsive-image {
+      margin-right: 20px; /* Space on the right for desktop */
+      margin-bottom: 40px; /* Remove bottom margin */
+  }
+}
